@@ -10,7 +10,7 @@ namespace SmartGarage_Exercise
 	/// <summary>
 	/// מייצג רובוט ניקוי חשמלי.
 	/// </summary>
-	public class CleaningRobot
+	public class CleaningRobot : I
 	{
 		/// <summary>
 		/// המספר הסידורי של הרובוט.

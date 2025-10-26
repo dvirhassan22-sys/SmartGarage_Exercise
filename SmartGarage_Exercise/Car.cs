@@ -5,29 +5,24 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SmartGarage_Exercise;
-	
 
-		/// <summary>
-		/// מייצגת מכונית בעלת מנוע דלק.
-		/// </summary>
-		public class Car
+
+/// <summary>
+/// מייצגת מכונית בעלת מנוע דלק.
+/// </summary>
+public class Car : Vehicle,moveable
 		{
-			/// <summary>
-			/// שם הדגם של המכונית.
-			/// </summary>
-			public string ModelName
-			{
-				get; set;
-			}
 
-			/// <summary>
-			/// אחוז הדלק הנוכחי (בין 0 ל-100).
-			/// </summary>
-			public int FuelPercentage
-			{
-				get; private set;
-			}
+    /// <summary>
+    /// אחוז הדלק הנוכחי (בין 0 ל-100).
+    /// </summary>
+    public int FuelPercentage
+		  {
+	     get; set;
+		  }
+    public string ModelName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
+    
 			/// <summary>
 			/// בנאי ליצירת מכונית חדשה.
 			/// </summary>
@@ -66,21 +61,25 @@ namespace SmartGarage_Exercise;
 				FuelPercentage = 100;
 			}
 
-			/// <summary>
-			/// מזיז את המכונית שמאלה.
-			/// </summary>
-			public void MoveLeft()
-			{
-				Console.WriteLine($"Car {ModelName} turns left.");
-			}
+    public void MoveLeft()
+    {
+        throw new NotImplementedException();
+    }
 
-			/// <summary>
-			/// מזיז את המכונית ימינה.
-			/// </summary>
-			public void MoveRight()
-			{
-				Console.WriteLine($"Car {ModelName} turns right.");
-			}
-		}
+    public void MoveRight()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Moveforward()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Movebackward()
+    {
+        throw new NotImplementedException();
+    }
+}
 
 	

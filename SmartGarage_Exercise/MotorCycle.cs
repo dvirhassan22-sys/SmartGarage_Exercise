@@ -9,7 +9,7 @@ namespace SmartGarage_Exercise
 	/// <summary>
 	/// מייצג אופנוע בעל מנוע דלק.
 	/// </summary>
-	public class Motorcycle
+	public class Motorcycle : Vehicle,moveable
 	{
 		/// <summary>
 		/// שם הדגם של האופנוע.
@@ -64,21 +64,25 @@ namespace SmartGarage_Exercise
 			FuelPercentage = 100;
 		}
 
-		/// <summary>
-		/// מזיז את האופנוע שמאלה.
-		/// </summary>
-		public void MoveLeft()
-		{
-			Console.WriteLine($"Motorcycle {ModelName} leans left.");
-		}
+        public void MoveLeft()
+        {
+            throw new NotImplementedException();
+        }
 
-		/// <summary>
-		/// מזיז את האופנוע ימינה.
-		/// </summary>
-		public void MoveRight()
-		{
-			Console.WriteLine($"Motorcycle {ModelName} leans right.");
-		}
-	}
+        public void MoveRight()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Moveforward()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Movebackward()
+        {
+            throw new NotImplementedException();
+        }
+    }
 
 }
