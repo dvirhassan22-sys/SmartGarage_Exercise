@@ -9,7 +9,7 @@ namespace SmartGarage_Exercise
 	/// <summary>
 	/// מייצג אופנוע בעל מנוע דלק.
 	/// </summary>
-	public class Motorcycle : Vehicle,moveable
+	public class Motorcycle : FuelVehicle,IMovable
 	{
 		/// <summary>
 		/// שם הדגם של האופנוע.
@@ -32,17 +32,15 @@ namespace SmartGarage_Exercise
 		/// </summary>
 		/// <param name="model">שם דגם האופנוע.</param>
 		/// <param name="fuel">כמות הדלק ההתחלתית.</param>
-		public Motorcycle(string model, int fuel)
+		public Motorcycle(string model, int fuel):base(model,fuel)
 		{
-			ModelName = model;
-			// Math.Clamp: מבטיח שהדלק יהיה תמיד בטווח 0-100.
-			FuelPercentage = Math.Clamp(fuel, 0, 100);
+			
 		}
 
 		/// <summary>
 		/// מבצע פעולת נסיעה הצורכת דלק (בצורה שונה ממכונית).
 		/// </summary>
-		public void Drive()
+		public override void Drive()
 		{
 			if (FuelPercentage > 5)
 			{
@@ -58,28 +56,28 @@ namespace SmartGarage_Exercise
 		/// <summary>
 		/// מתדלק את האופנוע למקסימום.
 		/// </summary>
-		public void Refuel()
+		public override void Refuel()
 		{
 			Console.WriteLine($"Refueling {ModelName}...");
-			FuelPercentage = 100;
+			base.Refuel();
 		}
 
-        public void MoveLeft()
+        public override void MoveLeft()
         {
             throw new NotImplementedException();
         }
 
-        public void MoveRight()
+        public override void MoveRight()
         {
             throw new NotImplementedException();
         }
 
-        public void Moveforward()
+        public override void Moveforward()
         {
             throw new NotImplementedException();
         }
 
-        public void Movebackward()
+        public override void Movebackward()
         {
             throw new NotImplementedException();
         }

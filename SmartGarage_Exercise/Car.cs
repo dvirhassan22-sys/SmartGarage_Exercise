@@ -10,7 +10,7 @@ namespace SmartGarage_Exercise;
 /// <summary>
 /// מייצגת מכונית בעלת מנוע דלק.
 /// </summary>
-public class Car : Vehicle,moveable
+public class Car : FuelVehicle
 		{
 
     /// <summary>
@@ -22,24 +22,24 @@ public class Car : Vehicle,moveable
 		  }
     public string ModelName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-    
-			/// <summary>
-			/// בנאי ליצירת מכונית חדשה.
-			/// </summary>
-			/// <param name="model">שם דגם המכונית.</param>
-			/// <param name="fuel">כמות הדלק ההתחלתית.</param>
-			public Car(string model, int fuel)
-			{
-				ModelName = model;
-				// Math.Clamp: פקודה המבטיחה שהערך יישאר בטווח שצוין.
-				// במקרה זה, 'fuel' יהיה תמיד בין 0 (המינימום) ל-100 (המקסימום).
-				FuelPercentage = Math.Clamp(fuel, 0, 100);
-			}
 
 			/// <summary>
-			/// מבצע פעולת נסיעה הצורכת דלק.
+			 /// בנאי ליצירת מכונית חדשה.
 			/// </summary>
-			public void Drive()
+			 /// <param name="model">שם דגם המכונית.</param>
+			 /// <param name="fuel">כמות הדלק ההתחלתית.</param>
+			public Car(string model, int fuel) : base(model)
+			{
+			}
+
+    public Car(string modelName) : base(modelName)
+    {
+    }
+
+    /// <summary>
+    /// מבצע פעולת נסיעה הצורכת דלק.
+    /// </summary>
+    public override void Drive()
 			{
 				if (FuelPercentage > 10)
 				{
@@ -61,25 +61,27 @@ public class Car : Vehicle,moveable
 				FuelPercentage = 100;
 			}
 
-    public void MoveLeft()
+    public override void MoveLeft()
     {
         throw new NotImplementedException();
     }
 
-    public void MoveRight()
+    public override void MoveRight()
     {
         throw new NotImplementedException();
     }
 
-    public void Moveforward()
+    public override void Moveforward()
     {
         throw new NotImplementedException();
     }
 
-    public void Movebackward()
+    public override void Movebackward()
     {
         throw new NotImplementedException();
     }
+
+
 }
 
 	

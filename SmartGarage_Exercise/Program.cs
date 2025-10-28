@@ -16,11 +16,12 @@
 			Car[] carFleet = { car1 };
 			Motorcycle[] bikeFleet = { bike1 };
 			CleaningRobot[] robotFleet = { robot1 };
+            IMovable[] items = new IMovable[10];
 
 			// הפעלת הפונקציות הישנות
 			SmartGarageTester.RefuelAllCars(carFleet);
 			SmartGarageTester.ChargeAllRobots(robotFleet);
-			SmartGarageTester.MoveAllRight(carFleet, bikeFleet, robotFleet);
+			SmartGarageTester.MoveAllRight(items);
 
 			// הפעלת הפעולות הייחודיות - אין ברירה אלא לעשות זאת ידנית
 			car1.Drive();
